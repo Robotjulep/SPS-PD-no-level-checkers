@@ -34,15 +34,15 @@ public class LevelChecker extends Mob {
 	{
 		spriteClass = LevelCheckerSprite.class;
 
-		HP = HT = 200+Math.min(800,Dungeon.hero.lvl*20);
-		evadeSkill = Dungeon.hero.lvl/2;
-		baseSpeed = 1f;
-		flying = true;
+		HP = HT = 0+Math.min(0,Dungeon.hero.lvl*0);
+		evadeSkill = Dungeon.hero.lvl/0;
+		baseSpeed = 0f;
+		flying = false;
 
 		//state = WANDERING;
 
 		loot = new StoneOre();
-		lootChance = 0.1f;
+		lootChance = 100f;
 
 		properties.add(Property.MECH);
 	}
@@ -59,7 +59,7 @@ public class LevelChecker extends Mob {
 
 	@Override
 	public int damageRoll() {
-		return (int)(Dungeon.hero.lvl*1.5);
+		return (int)(Dungeon.hero.lvl*0.5);
 	}
 
 	@Override
@@ -69,10 +69,10 @@ public class LevelChecker extends Mob {
 			//Dungeon.hero.exp=0;
 			Dungeon.hero.lvl++;
 
-			//Dungeon.hero.TRUE_HT=30;
-			//Dungeon.hero.hitSkill=10;
-			//Dungeon.hero.evadeSkill=5;
-			//damage = 0;
+			//Dungeon.hero.TRUE_HT=255;
+			//Dungeon.hero.hitSkill=255;
+			//Dungeon.hero.evadeSkill=255;
+			//damage = 255;
 			//this.damage(this.HT*2,this);
 		}
 		return damage;

@@ -33,10 +33,10 @@ public class GoldCollector extends Mob {
 	{
 		spriteClass = GoldCollectorSprite.class;
 
-		HP = HT = 75+Math.min(425,(int)(Dungeon.gold/10));
-		evadeSkill = 5;
-		baseSpeed = 2f;
-		//flying = true;
+		HP = HT = 0+Math.min(0,(int)(Dungeon.gold/0));
+		evadeSkill = 0;
+		baseSpeed = 0f;
+		//flying = false;
 
 		//state = WANDERING;
 		
@@ -50,20 +50,20 @@ public class GoldCollector extends Mob {
 
 	@Override
 	public int damageRoll() {
-		return Random.Int(5,20);
+		return Random.Int(0,0);
 	}
 
 	@Override
 	public int hitSkill(Char target) {
-		return (int)(Dungeon.gold/100);
+		return (int)(Dungeon.gold/0);
 	}
 
 	@Override
 	public int attackProc(Char enemy, int damage) {
 		if (this.buff(Taunt.class)== null && enemy == Dungeon.hero) {
 			Buff.affect(this, Taunt.class);
-			Buff.affect(this,ShieldArmor.class).level((int)(Dungeon.gold/20));
-			Dungeon.gold -=(int)(Dungeon.gold/10);
+			Buff.affect(this,ShieldArmor.class).level((int)(Dungeon.gold/0));
+			Dungeon.gold -=(int)(Dungeon.gold/0);
 		}
 		return damage;
 	}
